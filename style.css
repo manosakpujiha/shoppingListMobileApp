@@ -1,0 +1,135 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100vh;
+    /* padding-top: 20px; */
+}
+
+.page{
+    margin-top: 20px;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 400px;
+}
+
+h1{
+    margin-bottom: 30px;
+    color: white;
+}
+
+.outline{
+    height: 450px;
+    max-width: 320px;
+    background-color: green;
+    border: 5px solid white;
+    border-radius: 15px;
+    padding:  0px 50px 120px 50px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.container{
+    /* background-color: blue; */
+    width: 250px;
+    /* margin-top: 0; */
+    /* padding-top: 0; */
+    /* height: 300px; */
+}
+
+.container img {
+    object-fit: contain;
+    width: 100%;
+    /* background-color: rgba(214, 255, 100, 0.5); */
+}
+
+input, button {
+    width: 250px;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border: none;
+}
+input {
+    background-color: rgba(240, 248, 255, 0.801);
+    outline: none;
+}
+
+button {
+    background-color: rgb(17, 194, 135);
+    color: wheat;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(134, 133, 133, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #888585;
+    transform: translateY(4px);
+    
+  }
+
+  /* button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s
+  }
+  
+  button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  } */
+
+  #list{
+    margin-top: 20px;
+    width: 250px;
+    list-style: none; 
+    display: flex; 
+    padding: 0px;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* background-color: aliceblue; */
+  }
+
+  #list > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 10px 0; 
+    /* text-align: center; */
+    background-color: rgb(207, 14, 23);
+    color: gold;
+    border-radius: 10px;
+    padding: 10px;
+
+  }
