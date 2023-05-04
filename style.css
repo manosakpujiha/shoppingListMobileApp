@@ -29,7 +29,7 @@ h1{
 .outline{
     height: auto;
     max-width: 320px;
-    background-color: blue;
+    background-color: rgb(16, 16, 20);
     border: 5px solid white;
     border-radius: 15px;
     padding:  0px 50px 30px 50px;
@@ -68,7 +68,7 @@ input {
 }
 
 button {
-    background-color: rgb(17, 194, 135);
+    background-color: rgb(24, 141, 102);
     color: wheat;
     font-size: 16px;
     cursor: pointer;
@@ -111,13 +111,14 @@ button:hover {
   } */
 
   #list{
-    margin-top: 20px;
-    width: 250px;
     list-style: none; 
-    display: flex; 
     padding: 0px;
+    display: flex; 
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
+    margin-top: 20px;
+    /* width: 250px; */
+    
     /* background-color: aliceblue; */
   }
 
