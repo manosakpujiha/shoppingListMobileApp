@@ -123,14 +123,16 @@ button:hover {
   }
 
   #list > * {
-    display: flex;
+    background-color: rgb(207, 14, 23);
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     margin: 0px 0px 10px 0; 
     /* text-align: center; */
-    background-color: rgb(207, 14, 23);
     color: gold;
-    border-radius: 10px;
-    padding: 10px;
 
   }
