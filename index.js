@@ -1,5 +1,5 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js'
-import {getDatabase, ref, push, onValue} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
+import {getDatabase, ref, push, onValue, remove} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 // import Toastify from '../toastify-js'
 
 const appSettings = {
@@ -10,25 +10,52 @@ const appSettings = {
 let todos = document.querySelector('#list');
 let addBtn = document.querySelector('#add-button');
 let input = document.querySelector('#input-field');
-addBtn.addEventListener('click' , handleClick);
+addBtn.addEventListener('click' , submitToDb);
 input.addEventListener('keydown', handleSubmit);
 
 
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
-const shoppingListInDB = ref(database, 'shoppingList')
+const shoppingListInDB = ref(database, 'shoppingList');
+
+
 
 onValue(shoppingListInDB, function(snapshot){
-    todos.innerHTML = ''
-    let items = Object.values(snapshot.val())
-    items.map((item) => { 
-        todos.innerHTML += `<li>${item}</li>`
-        }) 
+    todos.innerHTML = '';
+    if (snapshot.exists()) {
+        let items = Object.entries(snapshot.val())
+        items.map((item) => { 
+            let button = document.createElement('li')
+            button.innerText=item[1];
+            let deleteItem = del.bind(item);
+            button.addEventListener('click', deleteItem);
+            todos.append(button);
+        })
+    } else {
+        todos.innerHTML= 'Your shopping list is empty!'
+    }
 })
 
-function handleClick () {
-    if (input.value) push(shoppingListInDB, input.value);
+function del() {
+    console.log(this[1])
+    remove(ref(database, `shoppingList/${this[0]}`))
+}
+
+function submitToDb() {
+    if (input.value) {
+        push(shoppingListInDB, input.value);
+        runToast()
+    }
     input.value = '';
+}
+
+function handleSubmit(e) {
+    if (e.key === 'Enter') {
+      submitToDb();
+    }
+  }
+
+  function runToast () {
     Toastify({
         text: "Added an Item!",
         duration: 3000,
@@ -39,14 +66,5 @@ function handleClick () {
             borderRadius: '10px'
         },
         }).showToast();
-}
-
-function handleSubmit(e) {
-    if (e.key === 'Enter') {
-      // call your function here
-      console.log('Enter key pressed!');
-      handleClick();
-    }
   }
-
 
