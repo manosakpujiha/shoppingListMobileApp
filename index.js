@@ -19,6 +19,7 @@ const shoppingListInDB = ref(database, 'shoppingList');
 
 onValue(shoppingListInDB, function(snapshot){
     todos.innerHTML = '';
+
     if (snapshot.exists()) {
         let items = Object.entries(snapshot.val())
         items.map((item) => { 
@@ -27,6 +28,7 @@ onValue(shoppingListInDB, function(snapshot){
             let deleteItem = del.bind(item);
             button.addEventListener('click', deleteItem);
             todos.append(button);
+            launch_toast()
         })
     } else {
         todos.innerHTML= 'Your shopping list is empty!';
