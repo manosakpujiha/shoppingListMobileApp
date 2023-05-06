@@ -1,11 +1,9 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js'
 import {getDatabase, ref, push, onValue, remove} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
-// import Toastify from '../toastify-js'
 
 const appSettings = {
     databaseURL : 'https://playground-f1eed-default-rtdb.firebaseio.com/'
 }
-
 
 let todos = document.querySelector('#list');
 let addBtn = document.querySelector('#add-button');
@@ -13,12 +11,9 @@ let input = document.querySelector('#input-field');
 addBtn.addEventListener('click' , submitToDb);
 input.addEventListener('keydown', handleSubmit);
 
-
-const app = initializeApp(appSettings)
-const database = getDatabase(app)
+const app = initializeApp(appSettings);
+const database = getDatabase(app);
 const shoppingListInDB = ref(database, 'shoppingList');
-
-
 
 onValue(shoppingListInDB, function(snapshot){
     todos.innerHTML = '';
@@ -32,19 +27,18 @@ onValue(shoppingListInDB, function(snapshot){
             todos.append(button);
         })
     } else {
-        todos.innerHTML= 'Your shopping list is empty!'
+        todos.innerHTML= 'Your shopping list is empty!';
     }
 })
 
 function del() {
-    console.log(this[1])
-    remove(ref(database, `shoppingList/${this[0]}`))
+    remove(ref(database, `shoppingList/${this[0]}`));
 }
 
 function submitToDb() {
     if (input.value) {
         push(shoppingListInDB, input.value);
-        runToast()
+        runToast();
     }
     input.value = '';
 }
