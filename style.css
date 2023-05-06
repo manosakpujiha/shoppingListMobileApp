@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Work+Sans:wght@300;400&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     -webkit-user-select: none;
     user-select: none;
+    font-family: 'Bruno Ace SC', cursive;
+    /* font-family: 'Work Sans', sans-serif; */
 
 }
 body {
@@ -133,4 +137,19 @@ button:active {
     border-radius: 5px;
     color: red;
     cursor: pointer;
+  }
+
+ 
+
+  .gif {
+    animation: play 10s infinite;
+  }
+  
+  .pause {
+    animation-play-state: paused;
+  }
+  
+  @keyframes play {
+    from { opacity: 1; }
+    to { opacity: 0.1; }
   }

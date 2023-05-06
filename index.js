@@ -5,19 +5,9 @@ const appSettings = {
 }
 
 const outline = document.querySelector('.outline');
-outline.innerHTML = `
-        <div id="toast">
-            <div id="img"><img alt="toast image" src='./jiggly.png' width='50px' height='50px' /></div>
-            <div id="desc">An new item was added by ...</div>
-        </div>
-        <div class="container">
-            <img src="./pokemon-png-image-famous-anime-character-png-only-6.png" alt="pokemon">
-        </div>
-        <input type="text" id="input-field" placeholder="Bread"/>
-        <button id="add-button">Add to cart</button>
+// outline.innerHTML = `
         
-        <ul id="list"></ul>
-    `
+//     `
 
 const todos = document.querySelector('#list');
 const addBtn = document.querySelector('#add-button');
@@ -70,19 +60,7 @@ function handleSubmit(e) {
     }
   }
 
-  function runToast () {
-    Toastify({
-        text: "Added an Item!",
-        duration: 3000,
-        gravity: "top", // Available options: "top", "bottom", "left", "right"
-        position: "center", // Available options: "center", "left", "right"
-        style: {
-            background: "linear-gradient(to right, red, gold)",
-            borderRadius: '10px'
-        },
-        }).showToast();
-  }
-
+ 
   function launch_toast(text, color='green') {
     let x = document.getElementById("toast");
     x.innerText = text;

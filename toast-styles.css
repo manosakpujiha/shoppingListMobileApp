@@ -12,7 +12,8 @@
     position: fixed;
     top: -450px;
     z-index: 1;
-    left: 0;right:0;
+    left: 0;
+    right:0;
     bottom: 30px;
     font-size: 17px;
     white-space: nowrap;

@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./toast-styles.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
    
 </head>
 <body>
@@ -20,13 +19,23 @@
         <h1 >Shopping List</h1>
 
         <div class="outline">
+            <div id="toast">
+                <div id="img">img
+                    <!-- <img  src="/jiggly.png" width='40px' height='40px' alt='toast image' /> -->
+                </div>
+                <div id="desc">An new item was added by ...</div>
+            </div>
+            <div class="container">
+                <img class="gif" src="./pokemon-png-image-famous-anime-character-png-only-6.png" alt="pokemon">
+            </div>
+            <input type="text" id="input-field" placeholder="Bread"/>
+            <button id="add-button">Add to cart</button>
             
+            <ul id="list"></ul>
             
         </div>
     </div>
     <script src="./index.js" type="module"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js">
-     
-    </script>
+   
 </body>
 </html>
