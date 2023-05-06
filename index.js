@@ -9,7 +9,9 @@ let todos = document.querySelector('#list');
 let addBtn = document.querySelector('#add-button');
 let input = document.querySelector('#input-field');
 addBtn.addEventListener('click' , submitToDb);
+const notification = document.querySelector('#notification')
 input.addEventListener('keydown', handleSubmit);
+notification.addEventListener('click' , launch_toast);
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
@@ -62,3 +64,13 @@ function handleSubmit(e) {
         }).showToast();
   }
 
+  function launch_toast() {
+    let x = document.getElementById("toast");
+
+    console.log(x.className )
+
+    x.className = "show";
+    console.log(x.className )
+
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
